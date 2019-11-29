@@ -1,15 +1,11 @@
 {
-  "name": "car",
+  "name": "lesson_shuidi",
   "version": "1.0.0",
-  "description": "",
+  "description": "- 前端\r   CSS+JS+ES+VUE+REACT  PC站+Mobile站+APP\r - 后端\r   NODE+GO\r - 名企就业能力课\r   Linux+LeetCode+设计模式+网络",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "baidu-aip-sdk": "^2.4.4"
-  }
+  "license": "ISC"
 }

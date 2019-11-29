@@ -17,3 +17,5 @@
    rem 是相对于html的字体大小
    0.4rem = 16px * 0.4 = 6.398px;
    在手机端px 不准备 适配所有手机
+ - 盒子模型
+   margin + border + padding + content

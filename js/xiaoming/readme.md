@@ -13,4 +13,7 @@
    gongming.age gongming.sendFlower(xiaohong);
    - 代理模式 Proxy
    小明 -> 小红 简陋的面向对象
-   小明 -> 小梅 -> 小红
+   小明 -> 小梅 -> 小红 
+   不同的对象（小红，小梅），只要实现同样的方法（receiveFlower）
+   交换使用，面向接口的编程
+   代理模式，
