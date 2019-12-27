@@ -1,0 +1,5 @@
+.section{
+  /* 相对单位不管什么设备，手机都响应用户手机 */
+  height: 100vh;
+  /* background-color: red; */
+}
