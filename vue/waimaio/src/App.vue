@@ -13,18 +13,21 @@
       </div>
     </div>
     <router-view />
-    <v-footer />  
+    <v-footer />
   </div>
 </template>
 <script>
 import header from './components/header/header.vue';
 import footer from './components/footer/footer.vue';
+
 const response = require('./common/data/seller.json');
+console.log(response);
 import { urlParse } from './common/js/util';
+
 export default {
   data () {
     return {
-      seller : {
+      seller: {
         id: (() => {
           let queryParam = urlParse();
           return queryParam.id
@@ -32,13 +35,13 @@ export default {
       }
     }
   },
-  components:{
-    'v-header':header,
-    'v-footer':footer
+  components: {
+    'v-header': header,
+    'v-footer': footer
   },
   // 生命周期 onLoad
   created() {
-    this.seller = Object.assign({},this.seller,response.data)
+    this.seller = Object.assign({}, this.seller, response.data)
     console.log(this.seller);
   },
 }
@@ -50,21 +53,22 @@ export default {
   margin 0
   padding 0
 
-
 .tab
   display flex
   width 100%
   height 40px
   line-height 40px
-  border-1px(rgba(7,17,27,0.8))
+  border-1px(rgba(7, 17, 27, 0.8))
   .tab-item
     flex 1
     text-align center
-    &>a
+    & > a 
       display block
       font-size 14px
       color rgb(77,85,93)
       text-decoration none
       &.active
-        color rgb(240, 20, 20)
+          color: rgb(240, 20, 20)
+
+
 </style>
