@@ -8,7 +8,9 @@
                     <text class="course-price" wx:if="{{item.price > 0}}">￥{{item.price}}</text>                     
                  </navigator>                       
             </view>                     
+            <view style="display:none"></view>    
             <view style="display:none"></view>                  
+
          </block>
                   
         <block wx:else>                    
