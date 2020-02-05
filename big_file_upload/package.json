@@ -1,0 +1,12 @@
+{
+  "name": "big_file_upload",
+  "version": "1.0.0",
+  "description": "分析下作者为什么要出这个题\r 文件上传是开发中的难点，大文件上传及断点续传 难点中的细节及核心技术点。面试官在考察es6文件对象、ajax 上传， async await promise 、后台文件存储、流操作等全面的全栈技能的同时，提升难度到大文件和断点续传，通过个主题，就可以较好的考察面试者全面解决问题的能力和技术细节。移动时代图片成为社交的主流，短视屏时代铁定是大文件，所以在上岗后，这个题的知识点是必须掌握清楚点，所以这是一道非常实在的好题",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
