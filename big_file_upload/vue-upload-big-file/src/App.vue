@@ -6,6 +6,10 @@
       <input type="file" @change="handleFileChange"/>
       <el-button @click="handleUpload">上传</el-button>
     </div>
+    <div>
+      <div>计算文件hash</div>
+      <el-progress :percentage="hashPercentage"></el-progress>
+    </div>
   </div>
 </template>
 
@@ -26,7 +30,8 @@ export default {
       file:null,
       hash:"",
     },
-    status:Status.wait
+    status:Status.wait,
+    hashPercentage:0
   }),
   methods:{
     async calculateHash (fileChunkList) {
@@ -41,12 +46,12 @@ export default {
         this.container.worker.postMessage({ fileChunkList });
         this.container.worker.onmessage = e => {
           console.log(e.data);
-          // const { percentage, hash} = e.data;
-          // console.log(percentage, '----');
-          // this.hashPercentage = percentage;
-          // if (hash) {
-          //   resolve(hash);
-          // }
+          const { percentage, hash} = e.data;
+          console.log(percentage, '----');
+          this.hashPercentage = percentage;
+          if (hash) {
+            resolve(hash);
+          }
           
         }
       })
