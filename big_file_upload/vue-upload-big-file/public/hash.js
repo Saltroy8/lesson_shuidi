@@ -1,3 +1,4 @@
+// 通过内容计算md5值
 self.importScripts('/spark-md5.min.js')
 
 self.onmessage = e => {
