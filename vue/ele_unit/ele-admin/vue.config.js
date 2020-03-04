@@ -1,6 +1,6 @@
 //  跨域解决方案  ngnix vue-clie 3.0
 module.exports = {
-  publicPath: "/admin",
+  publicPath: "/admin/",
   // a <->   proxy(中介 代理 58)  <->    b
   devServer: {
     //     /api/admin/login'    /admin/login
