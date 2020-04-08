@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function foo() {
+            setTimeout(() => {
+                console.log(1);
+            },2000)
+            return 'foo';
+        }
+        function* test() {
+            console.log('start');
+            let a = yield foo();
+            // return 13;
+            console.log('mid');
+            let b = yield 2;
+            console.log('end');
+        }
+        // let g = test();
+        // console.log(g.next());
+        // // foo();
+        // console.log(g.next());
+        // console.log(g.next());
+
+        function generateAutoRun(gen) {
+            let g = gen();
+            function next() {
+                let res = g.next();
+                if (res.done) return;
+                next();
+            }
+            next();
+        }
+        generateAutoRun(test);
+    </script>
+</body>
+</html>
