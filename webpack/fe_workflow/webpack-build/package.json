@@ -1,0 +1,19 @@
+{
+  "name": "webpack-build",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development node build/dev.js",
+    "build": "cross-env NODE_ENV=development node build/build.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cross-env": "^7.0.2"
+  },
+  "devDependencies": {
+    "rimraf": "^3.0.2"
+  }
+}
