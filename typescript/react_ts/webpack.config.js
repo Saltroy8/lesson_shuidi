@@ -1,20 +1,20 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-// const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const basePath = __dirname;
 
 module.exports = {
  context: path.join(basePath, 'src'), // 上下文环境 src 
  resolve: { // 帮处理那些静态文件
-   extensions: ['.js', '.ts'], // ts typescript js  .styl .sacc
+   extensions: ['.js', '.ts', '.tsx'], // ts typescript js  .styl .sacc
  },
  entry: {
-   app: './index.ts', // webpack 打包入口可以多个
-  //  vendorStyles: [ // bootstrap css 框架 vue  业务代码在改变, 但是框架要
-  //   // 被打包， 但是不会被修改， 单独打包
-  //    '../node_modules/bootstrap/dist/css/bootstrap.css',
-  //  ],
+   app: './index.tsx', // webpack 打包入口可以多个
+   vendorStyles: [ // bootstrap css 框架 vue  业务代码在改变, 但是框架要
+    // 被打包， 但是不会被修改， 单独打包
+     '../node_modules/bootstrap/dist/css/bootstrap.css',
+   ],
  },
  output: {
    path: path.join(basePath, 'dist'),
@@ -24,17 +24,17 @@ module.exports = {
    rules: [
     //  .ts -> .js -> babel
      {
-       test: /\.ts$/,
+       test: /\.tsx?$/,
        exclude: /node_modules/,
        loader: 'awesome-typescript-loader',
        options: {
          useBabel: true,
        },
      },
-    //  {
-    //    test: /\.css$/,
-    //    use: [MiniCssExtractPlugin.loader, 'css-loader'],
-    //  },
+     {
+       test: /\.css$/,
+       use: [MiniCssExtractPlugin.loader, 'css-loader'],
+     },
     //  {
     //    test: /\.(png|jpg|gif|svg)$/, // 压缩 base64
     //    loader: 'file-loader',
@@ -57,9 +57,9 @@ module.exports = {
      template: 'index.html', // Name of template in ./src
      hash: true,
    }),
-  //  new MiniCssExtractPlugin({
-  //    filename: '[name].css',
-  //    chunkFilename: '[id].css',
-  //  }),
+   new MiniCssExtractPlugin({
+     filename: '[name].css',
+     chunkFilename: '[id].css',
+   }),
  ],
 };
